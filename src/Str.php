@@ -11,6 +11,7 @@ class Str
     private $string;
     use camelCase;
     use snakeCase;
+    use slugCase;
 
 
     public static function on($string)
