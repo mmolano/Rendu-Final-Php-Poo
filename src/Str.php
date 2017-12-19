@@ -13,6 +13,7 @@ class Str
     use snakeCase;
     use slugCase;
     use kebabCase;
+    use studlyCase;
 
 
     public static function on($string)
