@@ -9,6 +9,7 @@ class Str
 {
 
     private $string;
+    use camelCase;
 
 
     public static function on($string)
