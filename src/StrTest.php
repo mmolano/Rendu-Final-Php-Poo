@@ -131,4 +131,23 @@ class StrTest extends TestCase
 
     }
 
+    public function testExo5_5(){
+
+        $string = Str::on('my_string')->titleCase()->toString();
+        $this->assertSame('MyString', $string); // true
+
+        $string = Str::on('myString')->titleCase()->toString();
+        $this->assertSame('MyString', $string); // true
+
+        $string = Str::on('my-string')->titleCase()->toString();
+        $this->assertSame('MyString', $string); // true
+
+
+        $string = Str::on('my string')->titleCase()->toString();
+        $this->assertSame('MyString', $string); // true
+
+        $string = Str::on('My String')->titleCase()->toString();
+        $this->assertSame('MyString', $string); // true
+    }
+
 }

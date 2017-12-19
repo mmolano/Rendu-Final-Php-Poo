@@ -14,6 +14,7 @@ class Str
     use slugCase;
     use kebabCase;
     use studlyCase;
+    use titleCase;
 
 
     public static function on($string)
