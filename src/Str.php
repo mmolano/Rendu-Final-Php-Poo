@@ -12,8 +12,8 @@ class Str
     use camelCase;
     use snakeCase;
     use slugCase;
-    use kebabCase;
     use studlyCase;
+    use kebabCase;
     use titleCase;
 
 
@@ -31,19 +31,24 @@ class Str
 
 
     public function replace($select, $change){
-        $this->string = str_replace($select, $change, $this->string);
-        return $this;
+        $string = str_replace($select, $change, $this->string);
+        return new self($string);
     }
 
+    public function preg_replace($search, $replace)
+    {
+        $string = preg_replace($search, $replace, $this->string);
+        return new self($string);
+    }
 
     public function ucwords(){
-        $this->string = ucwords($this->string);
-        return $this;
+        $string = ucwords($this->string);
+        return new self($string);
     }
 
     public function lcfirst(){
-        $this->string = lcfirst($this->string);
-        return $this;
+        $string = lcfirst($this->string);
+        return new self($string);
 
     }
 
@@ -58,15 +63,10 @@ class Str
     }
 
     public function strlower(){
-        $this->string = strtolower($this->string);
-        return $this;
+        $string = strtolower($this->string);
+        return new self($string);
     }
 
-    public function preg_replace($search, $replace)
-    {
-        $this->string = preg_replace($search, $replace, $this->string);
-        return $this;
-    }
 
 
 

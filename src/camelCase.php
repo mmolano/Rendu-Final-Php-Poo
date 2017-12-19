@@ -12,13 +12,20 @@ namespace Strings;
 trait camelCase
 {
 
+
     public function camelCase(){
+        if(preg_match('/[-,_, ]/', $this->string)) {
             return $this
-                ->replace('_', ' ')
+                ->strlower()
                 ->replace('-', ' ')
+                ->replace('_', ' ')
                 ->ucwords()
                 ->replace(' ', '')
                 ->lcfirst();
+
+        } else {
+            return $this;
+        }
     }
 
 }
