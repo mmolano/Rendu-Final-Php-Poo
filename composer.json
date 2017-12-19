@@ -1,0 +1,22 @@
+
+{
+    "name": "miguel/poo",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Miguel Molano",
+            "email": "miguel.molano@devinci.fr"
+        }
+    ],
+    "require": {
+    },
+    "require-dev":{
+        "phpunit/phpunit":"^6.5",
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Strings\\": "Src/"
+        }
+    }
+}
