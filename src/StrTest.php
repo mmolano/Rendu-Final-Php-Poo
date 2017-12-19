@@ -30,4 +30,23 @@ class StrTest extends TestCase
 
     }
 
+    public function testExo2_5(){
+
+        $string = Str::on('my_string')->camelCase()->toString();
+        $this->assertSame('myString', $string); // true
+
+        $string = Str::on('myString')->camelCase()->toString();
+        $this->assertSame('myString', $string); // true
+
+        $string = Str::on('my-string')->camelCase()->toString();
+        $this->assertSame('myString', $string); // true
+
+        $string = Str::on('my string')->camelCase()->toString();
+        $this->assertSame('myString', $string); // true
+
+        $string = Str::on('My String')->camelCase()->toString();
+        $this->assertSame('myString', $string); // true
+
+
+    }
 }

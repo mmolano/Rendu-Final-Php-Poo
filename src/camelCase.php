@@ -15,6 +15,7 @@ trait camelCase
     public function camelCase(){
             return $this
                 ->replace('_', ' ')
+                ->replace('-', ' ')
                 ->ucwords()
                 ->replace(' ', '')
                 ->lcfirst();
