@@ -90,4 +90,26 @@ class StrTest extends TestCase
 
     }
 
+    public function testExo4_5(){
+
+        $string = Str::on('my_string')->kebabCase()->toString();
+        $this->assertSame('my-string', $string); // true
+
+
+        $string = Str::on('myString')->kebabCase()->toString();
+        $this->assertSame('my-string', $string); // true
+
+        $string = Str::on('my-string')->kebabCase()->toString();
+        $this->assertSame('my-string', $string); // true
+
+
+        $string = Str::on('my string')->kebabCase()->toString();
+        $this->assertSame('my-string', $string); // true
+
+        $string = Str::on('My String')->kebabCase()->toString();
+        $this->assertSame('my-string', $string); // true
+
+    }
+
+
 }
