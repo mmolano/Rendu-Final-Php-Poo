@@ -10,6 +10,7 @@ class Str
 
     private $string;
     use camelCase;
+    use snakeCase;
 
 
     public static function on($string)
@@ -57,6 +58,11 @@ class Str
         return $this;
     }
 
+    public function preg_replace($search, $replace)
+    {
+        $this->string = preg_replace($search, $replace, $this->string);
+        return $this;
+    }
 
 
 

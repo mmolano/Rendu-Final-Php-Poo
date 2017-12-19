@@ -49,4 +49,24 @@ class StrTest extends TestCase
 
 
     }
+
+    public function testExo3(){
+
+        $string = Str::on('my_string')->snakeCase()->toString();
+        $this->assertSame('my_string', $string); // true
+
+        $string = Str::on('myString')->snakeCase()->toString();
+        $this->assertSame('my_string', $string); // true
+
+        $string = Str::on('my-string')->snakeCase()->toString();
+        $this->assertSame('my_string', $string); // true
+
+        $string = Str::on('my string')->snakeCase()->toString();
+        $this->assertSame('my_string', $string); // true
+
+        $string = Str::on('My String')->snakeCase()->toString();
+        $this->assertSame('my_string', $string); // true
+
+    }
+
 }
